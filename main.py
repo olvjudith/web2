@@ -9,7 +9,7 @@ def hello_world():
     c = sum(1,2)
 
 
-    return f"<p style='color:red'>Hello, World!</p>"
+    return f"<p style='color:blue'>Hello, World!</p>"
 
 
 @app.route("/web_sum")
