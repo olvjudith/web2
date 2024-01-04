@@ -10,7 +10,6 @@
             background-color: #f4f4f4;
             color: #333;
             margin: 20px;
-            text-align: center;
         }
 
         h1 {
@@ -28,12 +27,23 @@
             border-radius: 5px;
         }
     </style>
+    <script>
+        // Reload the image every 1 second
+        setInterval(function() {
+            // Generate a random string to force the browser to reload the image
+            var randomString = new Date().getTime();
+            var imageUrl = "/plot2?" + randomString;
+            
+            // Set the new image source
+            document.getElementById("plotImage").src = imageUrl;
+        }, 1000);
+    </script>
 </head>
 <body>
     <h1>Sine Wave Plot</h1>
     <p>{{ explanation_text }}</p>
     
     <!-- Embed the plot image using base64 encoding -->
-    <img src="data:image/png;base64,{{ plot_image }}" alt="Sine Wave Plot">
+    <img id="plotImage" src="/plot2" alt="Sine Wave Plot">
 </body>
 </html>
