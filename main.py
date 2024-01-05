@@ -24,7 +24,7 @@ def web_sum():
     return f"<p>c= {c}</p>"
 
 
-@app.route('/post/<int:post_id>')
+@app.route('/post/<float:post_id>')
 def show_post(post_id):
     
     with open("data.txt", "a") as file:
@@ -63,15 +63,16 @@ def plot_data2():
     return send_file(buf, mimetype='image/png')
 
 def generate_plot():
-    # Generate data for a sine wave from 0 to 3
-    x = np.linspace(0, 3, 1000)
-    y = np.sin(2 * np.pi * x)
+    # Read data from a file and assign it to a numpy array
+    data = np.loadtxt('data.txt')
 
     # Create a simple plot
-    plt.plot(x, y)
-    plt.title('Sine Wave Plot')
-    plt.xlabel('X-axis')
-    plt.ylabel('Y-axis')
+    plt.figure()
+    plt.plot(data)
+    plt.title('Your Plot Title')
+    plt.xlabel('X-axis Label')
+    plt.ylabel('Y-axis Label')
+     
 
     # Save the plot to a BytesIO object
     image_stream = io.BytesIO()
