@@ -51,8 +51,6 @@
 
             // Set the new image sources
             document.getElementById("plotImage1").src = "/plot1?" + randomString;
-            document.getElementById("plotImage2").src = "/plot2?" + randomString;
-            document.getElementById("plotImage3").src = "/plot3?" + randomString;
         }, 1000);
     </script>
 </head>
@@ -65,16 +63,6 @@
         <!-- Plot 1 -->
         <div class="plot">
             <img id="plotImage1" src="/plot1" alt="Voltage plot">
-        </div>
-        
-        <!-- Plot 2 -->
-        <div class="plot">
-            <img id="plotImage2" src="/plot2" alt="Current plot">
-        </div>
-        
-        <!-- Plot 3 -->
-        <div class="plot">
-            <img id="plotImage3" src="/plot3" alt="Power plot">
         </div>
     </div>
 </body>
